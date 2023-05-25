@@ -1,0 +1,41 @@
+plugins {
+  id "java"
+  id "war"
+  alias libs.plugins.teavm
+  alias libs.plugins.gretty
+}
+
+wrapper {
+  gradleVersion = "8.0.2"
+  distributionType = Wrapper.DistributionType.ALL
+
+  distributionPath = "wrapper/dists"
+  archivePath = "wrapper/dists"
+  jarFile = "gradle/wrapper/gradle-wrapper.jar"
+}
+
+dependencies {
+  teavm libs.tnoodle.scrambles
+}
+
+java {
+  sourceCompatibility = 17
+  targetCompatibility = 17
+}
+
+teavm {
+  all {
+    mainClass = "org.teavm.samples.tnoodle.TNoodleTest"
+  }
+  js {
+    addedToWebApp = true
+  }
+  wasm {
+    addedToWebApp = true
+    maxHeapSize = 128
+  }
+}
+
+gretty {
+  contextPath = ""
+}

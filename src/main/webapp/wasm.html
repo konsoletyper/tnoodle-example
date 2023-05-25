@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TNoodle WASM test</title>
+    <script src="wasm/tnoodle-test.wasm-runtime.js"></script>
+    <script>
+        function launch() {
+            TeaVM.wasm.load("wasm/tnoodle-test.wasm").then(teavm => {
+                teavm.main([]);
+            });
+        }
+    </script>
+</head>
+<body onload="launch()">
+<p>Open devtools console to see result</p>
+</body>
+</html>

@@ -1,0 +1,14 @@
+[versions]
+
+teavm = "0.8.1"
+tnoodle = "0.18.0"
+gretty = "4.0.3"
+
+[libraries]
+
+tnoodle-scrambles = { module = "org.worldcubeassociation.tnoodle:lib-scrambles", version.ref = "tnoodle" }
+
+[plugins]
+
+teavm = { id = "org.teavm", version.ref = "teavm" }
+gretty = { id = "org.gretty", version.ref = "gretty" }
